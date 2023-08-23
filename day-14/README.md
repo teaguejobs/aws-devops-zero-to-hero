@@ -60,5 +60,11 @@ INSTALLATION FOR CODE DEPLOY AGENT ON UBUNTU
 https://docs.aws.amazon.com/codedeploy/latest/userguide/codedeploy-agent-operations-install-ubuntu.html
 INSTALL DOCKER ON UBUNTU
 - sudo apt install docker.io -y
+IF CODEDEPLOY FAILS BECAUSE OF EXISTING RUNNUNG CONTAINER DO THE FOLLOWING
+- Manually delete the container on your server using docker rm -f containerid
+- Add this to stop_container.sh scipt
+- containerid=`docker ps | awk -F " " '{print $1}'`
+  docker rm -f $containerid
+  
 
 - Sit back and relax while AWS CodePipeline takes care of the rest. It will fetch the latest code, trigger the build process with AWS CodeBuild, and deploy the application if you configured the deployment stage.
