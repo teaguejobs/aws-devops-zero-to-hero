@@ -18,11 +18,11 @@ Create IAM Role
 
 ```
 eksctl create iamserviceaccount \
-  --cluster=<your-cluster-name> \
+  --cluster=demo-cluster \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
   --role-name AmazonEKSLoadBalancerControllerRole \
-  --attach-policy-arn=arn:aws:iam::<your-aws-account-id>:policy/AWSLoadBalancerControllerIAMPolicy \
+  --attach-policy-arn=arn:aws:iam::633880500398:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
 ```
 
@@ -43,13 +43,12 @@ helm repo update eks
 Install
 
 ```
-helm install aws-load-balancer-controller eks/aws-load-balancer-controller \            
-  -n kube-system \
-  --set clusterName=<your-cluster-name> \
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller -n kube-system \
+  --set clusterName=demo-cluster \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller \
-  --set region=<region> \
-  --set vpcId=<your-vpc-id>
+  --set region=us-east-1 \
+  --set vpcId=vpc-01870f0b949121d91
 ```
 
 Verify that the deployments are running.
