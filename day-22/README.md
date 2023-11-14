@@ -217,3 +217,9 @@ By configuring IAM policies and associating them with IAM roles, you grant speci
 
 By completing these steps, your AWS environment is ready to host an Amazon EKS cluster. You can proceed with creating an EKS cluster using the AWS Management Console or AWS CLI as described in section 3.
 
+
+
+##Installing Kubernetes with kOps##
+
+https://kubernetes.io/docs/setup/production-environment/tools/kops/
+
