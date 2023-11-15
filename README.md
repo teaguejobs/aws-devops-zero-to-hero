@@ -188,3 +188,7 @@ On the final day, you'll review best practices for AWS services, including secur
 ## Day 32: installing kubernetes with KOPS
 
 https://kubernetes.io/docs/setup/production-environment/tools/kops/
+
+## kubectl chat sheet
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
